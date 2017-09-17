@@ -16,8 +16,8 @@ export default class Header extends Component {
 const styles = StyleSheet.create({
   headerViewStyle: {
     alignItems: 'center',
-    height:responsiveHeight(15),
-    padding:30,
+    height:responsiveHeight(10),
+    padding:responsiveHeight(1),
     backgroundColor: '#740001'
   },
   headerTextStyle: {
@@ -25,6 +25,6 @@ const styles = StyleSheet.create({
   	color: "#FFD700",
     fontWeight: 'bold',
     textAlign: 'center',
-    padding:10,
+    padding:responsiveHeight(2),
   }
 });

@@ -57,11 +57,11 @@ export default class AccordionList extends PureComponent {
               <Ionicon name='ios-flower' size={20} reverse='true' color='#DAA520'/>
           </View>
           <View style={styles.subrow2}>
-            <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#DAA520' />
+            
            
             <Text style={styles.text}>{section.title}</Text>
             
-            <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#DAA520' />
+            
             
           </View>
           <View style={styles.flowerbullet}>

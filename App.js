@@ -8,7 +8,6 @@ import PDFView from './PDFView';
 //import { Icon } from 'react-native-elements';
 import { responsiveFontSize } from 'react-native-responsive-dimensions';
 import Ionicon from 'react-native-vector-icons/Ionicons';
-debugger;
 let MFLReactNativePayPal = NativeModules.MFLReactNativePayPal;
 
 export default class App extends PureComponent<void, *, State> {
@@ -22,14 +21,16 @@ export default class App extends PureComponent<void, *, State> {
     ],
     eventsResponse: '',
     homeResponse: '',
-    isLoading : true,
     routeIndex : '',
+    isLoading : true,
     ispdf:true
   };
   constructor(props) {
     super(props);
+    
+  };
+  componentWillMount() {
     if(this.state.homeResponse == "" || this.state.homeResponse == null || this.state.homeResponse == undefined){
-      this.isLoading = true;
       fetch('http://ec2-52-38-155-191.us-west-2.compute.amazonaws.com:8080/aysa/getEbooks')
         .then((response) => response.json())
         .then((responseJson) => {
@@ -40,8 +41,7 @@ export default class App extends PureComponent<void, *, State> {
             homeResponse = '{"status":"SUCCESS","message":"","ebooks":[{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"purushaoooooktham","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram1","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram1","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram1","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram1","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram1","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram1","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram1","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram1","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Mantras","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Mantras","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Mantras","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Mantras","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Mantras","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Mantras","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Vedam","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Vedam","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Vedam","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Bhajans","hasSubCategory":true,"items":null,"subCategoryList":[{"title":"Ayyappan","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Bhajans","subCategory":"Ayyappan","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-","itemTitle":"pallikattu","category":"Bhajans","subCategory":"Ayyappan","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Ganesha","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Bhajans","subCategory":"Ganesha","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Bhajans","subCategory":"Ganesha","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]}]},{"title":"Songs","hasSubCategory":true,"items":null,"subCategoryList":[{"title":"Guru","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Gurudhyaee","category":"Songs","subCategory":"Guru","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shakthi","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shakthi","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shiva","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shiva","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Krishna","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Krishna","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]}]},{"title":"Songs","hasSubCategory":true,"items":null,"subCategoryList":[{"title":"Guru","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Gurudhyaee","category":"Songs","subCategory":"Guru","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shakthi","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shakthi","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shiva","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shiva","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Krishna","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Krishna","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]}]},{"title":"Songs","hasSubCategory":true,"items":null,"subCategoryList":[{"title":"Guru","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Gurudhyaee","category":"Songs","subCategory":"Guru","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shakthi","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shakthi","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shiva","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shiva","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Krishna","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Krishna","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]}]},{"title":"Songs","hasSubCategory":true,"items":null,"subCategoryList":[{"title":"Guru","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Gurudhyaee","category":"Songs","subCategory":"Guru","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shakthi","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shakthi","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shiva","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shiva","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Krishna","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Krishna","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]}]},{"title":"Songs","hasSubCategory":true,"items":null,"subCategoryList":[{"title":"Guru","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Gurudhyaee","category":"Songs","subCategory":"Guru","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shakthi","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shakthi","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shiva","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shiva","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Krishna","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Krishna","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]}]}]}';
           }
           homeResponse = JSON.parse(homeResponse).ebooks;
-          this.isLoading = false;
-          this.setState({routeIndex:'1', homeResponse:homeResponse});
+          this.setState({routeIndex:'1',homeResponse:homeResponse,isLoading:false});
         })
         .catch((error) => {
           console.error(error);
@@ -49,15 +49,11 @@ export default class App extends PureComponent<void, *, State> {
       );
     }
   };
-  componentWillMount() {
-    
-  };
   componentDidMount() {
     console.log("Component did mount");
     MFLReactNativePayPal.initializePaypalEnvironment(0,
       "AWyPKtVl7ac7SOlIscEe-dONGB-oBYav2TwimOgB1FysVGcKneAkj_1O1LV-Vnr0PEeMk5NmweJfIiLm");
   }
-  isLoading= true;
   _first: Object;
   _second: Object;
   _third: Object;
@@ -67,9 +63,8 @@ export default class App extends PureComponent<void, *, State> {
       case 0:
       default:
           var homeResponse;
-          this.setState({index:index,routeIndex:'1'});
             if(this.state.homeResponse == '' || this.state.homeResponse == null || this.state.homeResponse == undefined){
-              this.isLoading = true;
+              this.setState({isLoading:true});
               fetch('http://ec2-52-38-155-191.us-west-2.compute.amazonaws.com:8080/aysa/getEbooks')
               .then((response) => response.json())
               .then((responseJson) => {
@@ -80,23 +75,21 @@ export default class App extends PureComponent<void, *, State> {
                   homeResponse = '{"status":"SUCCESS","message":"","ebooks":[{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"purushaoooooktham","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram1","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram1","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram1","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram1","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram1","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram1","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram1","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Slokas","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram1","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram2","category":"Slokas","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Slokas/Gayatri+Mantras.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Mantras","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Mantras","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Mantras","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Mantras","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Mantras","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Mantras","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Vedam","hasSubCategory":false,"items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Vedam","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Vedam","subCategory":"","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}],"subCategoryList":null},{"title":"Bhajans","hasSubCategory":true,"items":null,"subCategoryList":[{"title":"Ayyappan","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Bhajans","subCategory":"Ayyappan","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-","itemTitle":"pallikattu","category":"Bhajans","subCategory":"Ayyappan","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Ganesha","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Bhajans","subCategory":"Ganesha","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1},{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Bhajans","subCategory":"Ganesha","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]}]},{"title":"Songs","hasSubCategory":true,"items":null,"subCategoryList":[{"title":"Guru","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Gurudhyaee","category":"Songs","subCategory":"Guru","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shakthi","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shakthi","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shiva","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shiva","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Krishna","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Krishna","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]}]},{"title":"Songs","hasSubCategory":true,"items":null,"subCategoryList":[{"title":"Guru","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Gurudhyaee","category":"Songs","subCategory":"Guru","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shakthi","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shakthi","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shiva","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shiva","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Krishna","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Krishna","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]}]},{"title":"Songs","hasSubCategory":true,"items":null,"subCategoryList":[{"title":"Guru","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Gurudhyaee","category":"Songs","subCategory":"Guru","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shakthi","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shakthi","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shiva","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shiva","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Krishna","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Krishna","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]}]},{"title":"Songs","hasSubCategory":true,"items":null,"subCategoryList":[{"title":"Guru","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Gurudhyaee","category":"Songs","subCategory":"Guru","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shakthi","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shakthi","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shiva","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shiva","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Krishna","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Krishna","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]}]},{"title":"Songs","hasSubCategory":true,"items":null,"subCategoryList":[{"title":"Guru","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Gurudhyaee","category":"Songs","subCategory":"Guru","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shakthi","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shakthi","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Shiva","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Shiva","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]},{"title":"Krishna","items":[{"ebookId":"693d50f8-1949-4cb5-8308-29b72b4e610","itemTitle":"Rudram","category":"Songs","subCategory":"Krishna","fileUrl":"https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Sharana+Ghosham.pdf","language":"sanksrit","sequence":1}]}]}]}';
                 }
                 homeResponse = JSON.parse(homeResponse).ebooks;
-                this.isLoading = false;
-                this.setState({routeIndex:'1',homeResponse:homeResponse});
+                this.setState({index:index,routeIndex:'1',homeResponse:homeResponse,isLoading:false});
               })
               .catch((error) => {
                 console.error(error);
               });
             }
             else{
-              this.isLoading = false;
+              this.setState({index:index,routeIndex:'1',isLoading:false});
             }
             
         break;
       case 1: 
             var eventsResponse;
-            this.setState({index:index,routeIndex:'2'});
             if(this.state.eventsResponse == '' || this.state.eventsResponse == null || this.state.eventsResponse == undefined){
-              this.isLoading = true;
+              this.setState({isLoading:true});
               fetch('http://ec2-52-38-155-191.us-west-2.compute.amazonaws.com:8080/aysa/getEvents')
               .then((response) => response.json())
               .then((responseJson) => {
@@ -106,25 +99,22 @@ export default class App extends PureComponent<void, *, State> {
                 else{
                   eventsResponse = '{"status":"SUCCESS","message":"","events":[{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7a","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7b","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7c","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7a","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7d","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7e","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7f","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7g","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7h","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7i","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7j","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7k","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7l","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false}]}';
                 }
-                this.isLoading = false;
-                this.setState({routeIndex:'2',eventsResponse:eventsResponse});
+                this.setState({index:index,routeIndex:'2',eventsResponse:eventsResponse,isLoading:false});
               })
               .catch((error) => {
                 console.error(error);
               });
             }
             else{
-              this.isLoading = false;
+              this.setState({index:index,routeIndex:'2',isLoading:false});
             }
          // var eventsResponse = '{"status":"SUCCESS","message":"","events":[{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7a","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7b","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7c","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7a","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7d","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7e","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7f","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7g","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7h","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7i","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7j","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7k","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7l","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false}]}';
           break;
-      case 2: 
-          this.isLoading = false;
-          this.setState({index:index,routeIndex:'3'});
+      case 2:
+          this.setState({index:index,routeIndex:'3',isLoading:false});
         break;
-      case 3: 
-          this.isLoading = false;
-          this.setState({index:index,routeIndex:'4'});
+      case 3:
+          this.setState({index:index,routeIndex:'4',isLoading:false});
         break;
     }
   };
@@ -177,7 +167,7 @@ _renderIcon = ({ route }) => {
       case '1':
       default:
      
-        if (this.isLoading) {
+        if (this.state.isLoading) {
           return (
             <View style={{flex: 1, paddingTop: 10, justifyContent: 'center', alignItems: 'center'}}>
               <ActivityIndicator />
@@ -189,15 +179,14 @@ _renderIcon = ({ route }) => {
 
               <HomeListView
                 ref={el => (this._first = el)}
-                style={[styles.page, { backgroundColor: '#fff' }]}
+                style={[styles.page, { backgroundColor: '#f8f5ed' }]}
                 homeResponse={this.state.homeResponse}
               />
           );
         }
         break;
       case '2':
-        
-        if (this.isLoading) {
+        if (this.state.isLoading) {
           return (
             <View style={{flex: 1, paddingTop: 10, justifyContent: 'center', alignItems: 'center'}}>
               <ActivityIndicator />
@@ -208,7 +197,7 @@ _renderIcon = ({ route }) => {
           return (
               <EventListView
                 ref={el => (this._second = el)}
-                style={[styles.page, { backgroundColor: '#fff' }]}
+                style={[styles.page, { backgroundColor: '#f8f5ed' }]}
                 initialListSize={1}
                 eventData={this.state.eventsResponse}
               />
@@ -216,7 +205,7 @@ _renderIcon = ({ route }) => {
         }
         break;
       case '3':
-        if (this.isLoading) {
+        if (this.state.isLoading) {
           return (
             <View style={{flex: 1, paddingTop: 20, justifyContent: 'center', alignItems: 'center'}}>
               <ActivityIndicator />
@@ -225,18 +214,18 @@ _renderIcon = ({ route }) => {
         }
         else if(this.state.routeIndex == '3'){
           return (
-            <View style={[styles.page, { backgroundColor: '#fff' }]}>
+            <View style={[styles.page, { backgroundColor: '#f8f5ed' }]}>
               <Text style={styles.text} >Support Ayyappa Samaaj</Text>
-                <View style={styles.container}>
+                <View style={styles.donatebutton}>
                   <TouchableHighlight onPress={this._onPressButton}>
-                    <Text style={styles.welcome}>
-                      Tap To Initiate Paypal Test
+                    <Text style={styles.donatebuttontext}>
+                      Donate
                     </Text>
                   </TouchableHighlight>
-                  <Text style={styles.instructions}>
+                </View>
+                <Text style={styles.instructions}>
                     Use test user "bacon@react.com" password "Password!".
                   </Text>
-                </View>
             </View>
           );
         }
@@ -284,7 +273,7 @@ _renderIcon = ({ route }) => {
     
     
     return (
-      <View style={styles.donatebutton} >
+      <View style={styles.container} >
         <Header />
           <TabViewAnimated
             style={[styles.container, this.props.style]}
@@ -302,6 +291,18 @@ _renderIcon = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  page: {
+    flex: 1
+  },
+  donatebutton:{
+    borderRadius: 10,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: '#740001',
+    borderWidth: 1,
+    margin:5
   },
   tabbar: {
     backgroundColor: '#222'
@@ -357,15 +358,16 @@ const styles = StyleSheet.create({
   },
   text:{
     fontSize: responsiveFontSize(3),
-    color: '#FFD700',
+    color: '#740001',
     fontWeight: 'bold',
     textAlign: 'center',
     padding: 5,
   },
-  donatebutton:{
-    justifyContent: 'center',
-    margin:5,
-    flex:1
+  donatebuttontext:{
+    fontSize: responsiveFontSize(3),
+    color: '#740001',
+    textAlign: 'center',
+    padding: 5,
   },
   backgroundImage: {
     flex: 1,

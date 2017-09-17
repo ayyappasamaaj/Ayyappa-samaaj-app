@@ -155,7 +155,7 @@ export default class HomeListView extends PureComponent {
     else{
       return(
         <ScrollView
-              style={[styles.page, { backgroundColor: '#fff' }]}
+              style={[styles.page, { backgroundColor: '#f8f5ed' }]}
             >
         <Accordion 
           sections={this.state.sections}

@@ -135,6 +135,7 @@ export default class EventListView extends PureComponent {
         renderRow={this._renderRow}
         onEndReached={this._genRows}
         ref={el => (this._root = el)}
+        
       />
     );
   }
