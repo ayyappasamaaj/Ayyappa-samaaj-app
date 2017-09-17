@@ -22,6 +22,16 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		22D38D0B1F6E55940086495F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D38D0A1F6E55940086495F /* Accelerate.framework */; };
+		22D38D0D1F6E559E0086495F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D38D0C1F6E559E0086495F /* AudioToolbox.framework */; };
+		22D38D0F1F6E55A60086495F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D38D0E1F6E55A60086495F /* AVFoundation.framework */; };
+		22D38D111F6E55B00086495F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D38D101F6E55B00086495F /* CoreLocation.framework */; };
+		22D38D131F6E55BA0086495F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D38D121F6E55BA0086495F /* CoreMedia.framework */; };
+		22D38D151F6E55C60086495F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D38D141F6E55C60086495F /* MessageUI.framework */; };
+		22D38D171F6E55CE0086495F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D38D161F6E55CE0086495F /* MobileCoreServices.framework */; };
+		22D38D191F6E55D50086495F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D38D181F6E55D50086495F /* SystemConfiguration.framework */; };
+		22D38D1B1F6E55DB0086495F /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D38D1A1F6E55DB0086495F /* SafariServices.framework */; };
+		22D38D1C1F6E5E560086495F /* libMFLReactNativePayPal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D38CDE1F6E54AA0086495F /* libMFLReactNativePayPal.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -163,6 +173,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 3D383D621EBD27B9005632C8;
 			remoteInfo = "double-conversion-tvOS";
+		};
+		22D38CDD1F6E54AA0086495F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22D38CD91F6E54AA0086495F /* MFLReactNativePayPal.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 64D7A2381C46907F008FCDA3;
+			remoteInfo = MFLReactNativePayPal;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -314,6 +331,16 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AyappaSamaajProject/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = AyappaSamaajProject/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		22D38CD91F6E54AA0086495F /* MFLReactNativePayPal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MFLReactNativePayPal.xcodeproj; path = "../node_modules/react-native-paypal/ios/MFLReactNativePayPal.xcodeproj"; sourceTree = "<group>"; };
+		22D38D0A1F6E55940086495F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		22D38D0C1F6E559E0086495F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		22D38D0E1F6E55A60086495F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		22D38D101F6E55B00086495F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		22D38D121F6E55BA0086495F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		22D38D141F6E55C60086495F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		22D38D161F6E55CE0086495F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		22D38D181F6E55D50086495F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		22D38D1A1F6E55DB0086495F /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		28F4934877FC470BA3BEC05A /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* AyappaSamaajProject-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AyappaSamaajProject-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* AyappaSamaajProject-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AyappaSamaajProject-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -348,6 +375,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D38D1C1F6E5E560086495F /* libMFLReactNativePayPal.a in Frameworks */,
+				22D38D1B1F6E55DB0086495F /* SafariServices.framework in Frameworks */,
+				22D38D191F6E55D50086495F /* SystemConfiguration.framework in Frameworks */,
+				22D38D171F6E55CE0086495F /* MobileCoreServices.framework in Frameworks */,
+				22D38D151F6E55C60086495F /* MessageUI.framework in Frameworks */,
+				22D38D131F6E55BA0086495F /* CoreMedia.framework in Frameworks */,
+				22D38D111F6E55B00086495F /* CoreLocation.framework in Frameworks */,
+				22D38D0F1F6E55A60086495F /* AVFoundation.framework in Frameworks */,
+				22D38D0D1F6E559E0086495F /* AudioToolbox.framework in Frameworks */,
+				22D38D0B1F6E55940086495F /* Accelerate.framework in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -524,6 +561,30 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		22D38CDA1F6E54AA0086495F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22D38CDE1F6E54AA0086495F /* libMFLReactNativePayPal.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22D38D091F6E55940086495F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22D38D1A1F6E55DB0086495F /* SafariServices.framework */,
+				22D38D181F6E55D50086495F /* SystemConfiguration.framework */,
+				22D38D161F6E55CE0086495F /* MobileCoreServices.framework */,
+				22D38D141F6E55C60086495F /* MessageUI.framework */,
+				22D38D121F6E55BA0086495F /* CoreMedia.framework */,
+				22D38D101F6E55B00086495F /* CoreLocation.framework */,
+				22D38D0E1F6E55A60086495F /* AVFoundation.framework */,
+				22D38D0C1F6E559E0086495F /* AudioToolbox.framework */,
+				22D38D0A1F6E55940086495F /* Accelerate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,6 +606,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				22D38CD91F6E54AA0086495F /* MFLReactNativePayPal.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -580,6 +642,7 @@
 				00E356EF1AD99517003FC87E /* AyappaSamaajProjectTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				8B2F1C2D173F4341A8309675 /* Resources */,
+				22D38D091F6E55940086495F /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -724,6 +787,10 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 22D38CDA1F6E54AA0086495F /* Products */;
+					ProjectRef = 22D38CD91F6E54AA0086495F /* MFLReactNativePayPal.xcodeproj */;
+				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
@@ -895,6 +962,13 @@
 			fileType = archive.ar;
 			path = "libdouble-conversion.a";
 			remoteRef = 22BEA7E71F4ABB5F00BA0863 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		22D38CDE1F6E54AA0086495F /* libMFLReactNativePayPal.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMFLReactNativePayPal.a;
+			remoteRef = 22D38CDD1F6E54AA0086495F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		3DAD3E841DF850E9000B6D8A /* libRCTImage-tvOS.a */ = {
@@ -1231,6 +1305,10 @@
 				);
 				INFOPLIST_FILE = AyappaSamaajProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1255,6 +1333,10 @@
 				);
 				INFOPLIST_FILE = AyappaSamaajProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

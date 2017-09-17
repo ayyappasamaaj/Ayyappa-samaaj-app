@@ -52,35 +52,57 @@ export default class HomeListView extends PureComponent {
     return (
       <View style={styles.rowwrapper}>
         <View style={styles.row}>
-          <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#fff' />
-          <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#fff' />
-          <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#fff' />
-          <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#fff' />
-          <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#fff' />
           <View style={styles.column}>
             <View style={styles.flowercontainer}>
-              <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#fff' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#fff' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#fff' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#fff' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#fff' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={20} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
              
             </View>
             <Text style={styles.text}>{section.title}</Text>
             <View style={styles.flowercontainer}>
-              <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#fff' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#fff' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#fff' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#fff' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#fff' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={20} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
               
             </View>
           </View>
-          <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#fff' />
-          <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#fff' />
-          <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#fff' />
-          <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#fff' />
-          <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#fff' />
         </View>
       </View>
     );
@@ -133,7 +155,7 @@ export default class HomeListView extends PureComponent {
     else{
       return(
         <ScrollView
-              style={[styles.page, { backgroundColor: '#222' }]}
+              style={[styles.page, { backgroundColor: '#fff' }]}
             >
         <Accordion 
           sections={this.state.sections}
@@ -148,6 +170,7 @@ export default class HomeListView extends PureComponent {
 
 const styles = StyleSheet.create({
   container: {
+
   },
   rowwrapper:{
     alignItems: 'center',
@@ -161,18 +184,19 @@ const styles = StyleSheet.create({
   row: {
     padding: 8,
     borderRadius: 10,
-    backgroundColor: '#567089',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     flex: 0.9, 
     flexDirection: 'row',
-    borderColor: '#0084ff',
+    borderColor: '#740001',
     borderWidth: 1,
+    margin:8
   },
   
   text: {
-    fontSize: responsiveFontSize(4),
-    color: 'white',
+    fontSize: responsiveFontSize(3),
+    color: '#740001',
     fontWeight: 'bold',
     textAlign: 'center',
     padding:5,

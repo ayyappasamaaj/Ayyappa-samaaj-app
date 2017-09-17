@@ -45,21 +45,23 @@ export default class AccordionSubList extends PureComponent {
   _renderRow = index => {
     //this.setState({index:index});
       return(
-        <View style={styles.parentrow}>
-          <View style={styles.flowerbullet}>
-                <Ionicon name='ios-flower' size={15} reverse='true' color='#0084ff'/>
-          </View>
-          <View style={styles.sublistrow}>
-            <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#fff' />
-            <TouchableHighlight onPress={()=>this._onPressRow(index)}>
-              <Text style={styles.text}>{index.itemTitle}</Text>
-            </TouchableHighlight>
-            <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#fff' />
-          </View>
-          <View style={styles.flowerbullet}>
-                <Ionicon name='ios-flower' size={15} reverse='true' color='#0084ff'/>
-          </View>
+        <TouchableHighlight onPress={()=>this._onPressRow(index)}>
+          <View style={styles.parentrow}>
+            <View style={styles.flowerbullet}>
+                  <Ionicon name='ios-flower' size={15} reverse='true' color='#DAA520'/>
+            </View>
+            <View style={styles.sublistrow}>
+              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#DAA520' />
+              
+                <Text style={styles.text}>{index.itemTitle}</Text>
+              
+              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#DAA520' />
+            </View>
+            <View style={styles.flowerbullet}>
+                  <Ionicon name='ios-flower' size={15} reverse='true' color='#DAA520'/>
+            </View>
         </View>
+        </TouchableHighlight>
       );
   	
   };
@@ -83,6 +85,7 @@ export default class AccordionSubList extends PureComponent {
 }
 const styles = StyleSheet.create({
   container: {
+    padding:8
   },
   parentrow:{
     alignItems: 'center',
@@ -95,17 +98,17 @@ const styles = StyleSheet.create({
   },
   sublistrow: {
     borderRadius: 10,
-    backgroundColor: 'brown',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     flex: 0.8, 
     flexDirection: 'row',
-    borderColor: '#0084ff',
+    borderColor: '#740001',
     borderWidth: 1,
   },
   text: {
     fontSize : 18,
-    color: 'white',
+    color: '#740001',
     fontWeight: 'bold',
     textAlign: 'center',
     padding: 5,
@@ -113,7 +116,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     backgroundColor: 'transparent',
-    color: 'white',
+    color: '#DAA520',
     padding:0
   },
   firstcolumn:{

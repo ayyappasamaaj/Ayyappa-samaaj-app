@@ -14,7 +14,7 @@ import {
     View,
     Text
 } from 'react-native';
- 
+import { responsiveHeight, responsiveFontSize } from 'react-native-responsive-dimensions';
 import Pdf from 'react-native-pdf';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 export default class PDFView extends React.Component {
@@ -61,21 +61,21 @@ export default class PDFView extends React.Component {
         let source = {uri:this.props.url,cache:true};
         return (
             <View style={styles.container}>
-                <View style={styles.row}>
-                    
-                    <Text style={styles.firstcolumntext}> {this.props.title} </Text>
-                    
-                    <TouchableHighlight style={this.state.page==1?styles.btnDisable:styles.btn} refs="true" onPress={()=>this.closePDF()}>
-                        <Text style={styles.btnText}><Ionicon name="ios-close-circle" size={32} color="#0084ff" style={styles.iconSize} /></Text>
-                    </TouchableHighlight>
-                </View>
-                <View style={styles.row}>
-                <TouchableHighlight  disabled={this.state.page==1} style={this.state.page==1?styles.btnDisable:styles.btn} onPress={()=>this.prePage()}>
-                    <Text style={styles.btnText}><Ionicon name="ios-arrow-dropleft-circle" size={32} color="#0084ff" style={styles.iconSize} /></Text>
-                </TouchableHighlight>
-                <TouchableHighlight  disabled={this.state.page==this.state.pageCount} style={this.state.page==this.state.pageCount?styles.btnDisable:styles.btn}  onPress={()=>this.nextPage()}>
-                    <Text style={styles.btnText}><Ionicon name="ios-arrow-dropright-circle" size={32} color="#0084ff" style={styles.iconSize} /></Text>
-                </TouchableHighlight>
+                <View style={styles.rowcontainer}>
+                    <View style={styles.row1}>
+                        <TouchableHighlight  disabled={this.state.page==1} style={this.state.page==1?styles.btnDisable:styles.btn} onPress={()=>this.prePage()}>
+                        <Text style={styles.btnText}><Ionicon name="ios-arrow-dropleft-circle" size={25} color="#DAA520" style={styles.iconSize} /></Text>
+                        </TouchableHighlight>
+                        <Text style={styles.firstcolumntext}> {this.props.title} </Text>
+                        <TouchableHighlight  disabled={this.state.page==this.state.pageCount} style={this.state.page==this.state.pageCount?styles.btnDisable:styles.btn}  onPress={()=>this.nextPage()}>
+                            <Text style={styles.btnText}><Ionicon name="ios-arrow-dropright-circle" size={25} color="#DAA520" style={styles.iconSize} /></Text>
+                        </TouchableHighlight>
+                    </View>
+                    <View style={styles.row2}>
+                        <TouchableHighlight style={this.state.page==1?styles.btnDisable:styles.btn} refs="true" onPress={()=>this.closePDF()}>
+                            <Text style={styles.btnText}><Ionicon name="ios-close-circle" size={25} color="#DAA520" style={styles.iconSize} /></Text>
+                        </TouchableHighlight>
+                    </View>
                 </View>
                 <Pdf ref={(pdf)=>{this.pdf = pdf;}}
                     source={source}
@@ -101,8 +101,8 @@ export default class PDFView extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'flex-start',
         alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor: "#222",
     },
     btn: {
@@ -132,14 +132,26 @@ const styles = StyleSheet.create({
         height: 32
     },
     firstcolumntext:{
-        fontSize : 25,
+        fontSize : responsiveHeight(3),
         color: 'white',
         fontWeight: 'bold',
         textAlign: 'center'
     },
-    row:{
+    rowcontainer:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection : 'row',
+        height: responsiveHeight(5),
+        padding:5
+    },
+    row1:{
         flexDirection:'row',
         alignItems: 'center',
-        justifyContent: 'center' 
+        justifyContent: 'center',
+    },
+    row2:{
+        flexDirection:'row',
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 });

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
+import { responsiveFontSize, responsiveHeight } from 'react-native-responsive-dimensions';
 export default class Header extends Component {
   state = {
-    headerTitle: 'Sharanam Ayappa'
+    headerTitle: 'Sharanam Ayyappa'
   };
   render() { 
   	return (
@@ -15,12 +16,15 @@ export default class Header extends Component {
 const styles = StyleSheet.create({
   headerViewStyle: {
     alignItems: 'center',
-    height:100,
+    height:responsiveHeight(15),
     padding:30,
-    backgroundColor: '#222'
+    backgroundColor: '#740001'
   },
   headerTextStyle: {
-  	fontSize:40,
-  	color: "#FFD700"
+  	fontSize:responsiveFontSize(3),
+  	color: "#FFD700",
+    fontWeight: 'bold',
+    textAlign: 'center',
+    padding:10,
   }
 });

@@ -1,12 +1,16 @@
 import React, { PureComponent } from 'react';
-import { View, Animated, StyleSheet, AppRegistry, Text, WebView, ActivityIndicator } from 'react-native';
+import { View, Animated, StyleSheet, AppRegistry, Text, WebView, ActivityIndicator, NativeModules, TouchableHighlight } from 'react-native';
 import { TabViewAnimated, TabBar } from 'react-native-tab-view';
 import EventListView from './EventListView';
 import HomeListView from './HomeListView';
 import Header from './Header';
 import PDFView from './PDFView';
 //import { Icon } from 'react-native-elements';
+import { responsiveFontSize } from 'react-native-responsive-dimensions';
 import Ionicon from 'react-native-vector-icons/Ionicons';
+debugger;
+let MFLReactNativePayPal = NativeModules.MFLReactNativePayPal;
+
 export default class App extends PureComponent<void, *, State> {
   state: State = {
     index: 0,
@@ -48,7 +52,11 @@ export default class App extends PureComponent<void, *, State> {
   componentWillMount() {
     
   };
-
+  componentDidMount() {
+    console.log("Component did mount");
+    MFLReactNativePayPal.initializePaypalEnvironment(0,
+      "AWyPKtVl7ac7SOlIscEe-dONGB-oBYav2TwimOgB1FysVGcKneAkj_1O1LV-Vnr0PEeMk5NmweJfIiLm");
+  }
   isLoading= true;
   _first: Object;
   _second: Object;
@@ -111,10 +119,12 @@ export default class App extends PureComponent<void, *, State> {
          // var eventsResponse = '{"status":"SUCCESS","message":"","events":[{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7a","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7b","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7c","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7a","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7d","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7e","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7f","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7g","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7h","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7i","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7j","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7k","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false},{"eventId":"99090506-32cd-4b8b-b6a3-cea3f3847e7l","eventName":"Weekly Bhajans during Mandalam Season","eventDesc":"","startDate":1510443000000,"endDate":1510455600000,"venue":"SVCC Temple, Fremont","registrationLink":"","recurring":false}]}';
           break;
       case 2: 
-          this.setState({index:index,isLoading:true,routeIndex:'3'});
+          this.isLoading = false;
+          this.setState({index:index,routeIndex:'3'});
         break;
       case 3: 
-          this.setState({index:index,isLoading:false,routeIndex:'4'});
+          this.isLoading = false;
+          this.setState({index:index,routeIndex:'4'});
         break;
     }
   };
@@ -179,7 +189,7 @@ _renderIcon = ({ route }) => {
 
               <HomeListView
                 ref={el => (this._first = el)}
-                style={[styles.page, { backgroundColor: '#222' }]}
+                style={[styles.page, { backgroundColor: '#fff' }]}
                 homeResponse={this.state.homeResponse}
               />
           );
@@ -198,7 +208,7 @@ _renderIcon = ({ route }) => {
           return (
               <EventListView
                 ref={el => (this._second = el)}
-                style={[styles.page, { backgroundColor: '#BD081C' }]}
+                style={[styles.page, { backgroundColor: '#fff' }]}
                 initialListSize={1}
                 eventData={this.state.eventsResponse}
               />
@@ -206,7 +216,7 @@ _renderIcon = ({ route }) => {
         }
         break;
       case '3':
-        if (this.state.isLoading) {
+        if (this.isLoading) {
           return (
             <View style={{flex: 1, paddingTop: 20, justifyContent: 'center', alignItems: 'center'}}>
               <ActivityIndicator />
@@ -215,11 +225,19 @@ _renderIcon = ({ route }) => {
         }
         else if(this.state.routeIndex == '3'){
           return (
-            <HomeListView
-              ref={el => (this._third = el)}
-              style={[styles.page, { backgroundColor: '#EDD8B5' }]}
-              initialListSize={1}
-            />
+            <View style={[styles.page, { backgroundColor: '#fff' }]}>
+              <Text style={styles.text} >Support Ayyappa Samaaj</Text>
+                <View style={styles.container}>
+                  <TouchableHighlight onPress={this._onPressButton}>
+                    <Text style={styles.welcome}>
+                      Tap To Initiate Paypal Test
+                    </Text>
+                  </TouchableHighlight>
+                  <Text style={styles.instructions}>
+                    Use test user "bacon@react.com" password "Password!".
+                  </Text>
+                </View>
+            </View>
           );
         }
         break;
@@ -240,6 +258,25 @@ _renderIcon = ({ route }) => {
         break;
     }
   };
+  _onPressButton() {
+    MFLReactNativePayPal.preparePaymentOfAmount("1.00", "USD", "Ayy");
+    MFLReactNativePayPal.prepareConfigurationForMerchant("Bacon Truck", true, "bacon@bacon.com");
+    MFLReactNativePayPal.presentPaymentViewControllerForPreparedPurchase((error, payload) => {
+      if (error) {
+         //Handle Error
+         return;
+       } else {
+
+        console.log("payload: " + payload);
+        if (payload.status == 1) {
+           console.log(payload.confirmation);
+        } else {
+           alert("User cancelled payment");
+        }
+       }
+    });
+  }
+
   //  _handleChangeTab = index => {
   //   this.setState({ index });
   // }
@@ -247,7 +284,7 @@ _renderIcon = ({ route }) => {
     
     
     return (
-      <View style={styles.container} >
+      <View style={styles.donatebutton} >
         <Header />
           <TabViewAnimated
             style={[styles.container, this.props.style]}
@@ -308,4 +345,30 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: -2,
   },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+  text:{
+    fontSize: responsiveFontSize(3),
+    color: '#FFD700',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    padding: 5,
+  },
+  donatebutton:{
+    justifyContent: 'center',
+    margin:5,
+    flex:1
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'stretch', // or 'stretch'
+  }
 });

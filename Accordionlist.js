@@ -54,41 +54,43 @@ export default class AccordionList extends PureComponent {
       return (
         <View style={styles.rowwrapper}>
           <View style={styles.flowerbullet}>
-              <Ionicon name='ios-flower' size={20} reverse='true' color='#0084ff'/>
+              <Ionicon name='ios-flower' size={20} reverse='true' color='#DAA520'/>
           </View>
           <View style={styles.subrow2}>
-            <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#fff' />
+            <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#DAA520' />
            
             <Text style={styles.text}>{section.title}</Text>
             
-            <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#fff' />
+            <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#DAA520' />
             
           </View>
           <View style={styles.flowerbullet}>
-              <Ionicon name='ios-flower' size={20} reverse='true' color='#0084ff'/>
+              <Ionicon name='ios-flower' size={20} reverse='true' color='#DAA520'/>
           </View>
         </View>
       );
     }
     else{
       return(
-          <View style={styles.rowwrapper}>
-            <View style={styles.flowerbullet}>
-              <Ionicon name='ios-flower' size={20} reverse='true' color='#0084ff'/>
+         <TouchableHighlight onPress={()=>this._onPressRow(section)}>
+            <View style={styles.rowwrapper}>
+              <View style={styles.flowerbullet}>
+                <Ionicon name='ios-flower' size={20} reverse='true' color='#DAA520'/>
+              </View>
+              <View style={styles.subrow1}>
+                <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#DAA520' />
+               
+               
+                  <Text style={styles.subtext}>{section.itemTitle}</Text>
+               
+                
+                <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#DAA520' />
+              </View>
+              <View style={styles.flowerbullet}>
+                <Ionicon name='ios-flower' size={20} reverse='true' color='#DAA520'/>
+              </View>
             </View>
-            <View style={styles.subrow1}>
-              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#fff' />
-             
-              <TouchableHighlight onPress={()=>this._onPressRow(section)}>
-                <Text style={styles.subtext}>{section.itemTitle}</Text>
-              </TouchableHighlight>
-              
-              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#fff' />
-            </View>
-            <View style={styles.flowerbullet}>
-              <Ionicon name='ios-flower' size={20} reverse='true' color='#0084ff'/>
-            </View>
-          </View>
+          </TouchableHighlight>
         );
     }
   }
@@ -155,34 +157,34 @@ const styles = StyleSheet.create({
   },
   subrow1: {
     borderRadius: 10,
-    backgroundColor: 'red',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     flex: 0.9, 
     flexDirection: 'row',
-    borderColor: '#0084ff',
+    borderColor: '#740001',
     borderWidth: 1,
   },
   subrow2: {
     borderRadius: 10,
-    backgroundColor: 'red',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     flex: 0.9, 
     flexDirection: 'row',
-    borderColor: '#0084ff',
+    borderColor: '#740001',
     borderWidth: 1,
   },
   text: {
-    fontSize: responsiveFontSize(3),
-    color: 'white',
+    fontSize: responsiveFontSize(2.5),
+    color: '#740001',
     fontWeight: 'bold',
     textAlign: 'center',
     padding:5,
   },
   subtext: {
-    fontSize: responsiveFontSize(2),
-    color: 'white',
+    fontSize: responsiveFontSize(2.5),
+    color: '#740001',
     fontWeight: 'bold',
     textAlign: 'center',
     padding:10,

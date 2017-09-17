@@ -40,7 +40,7 @@ export default class EventListView extends PureComponent {
     return (
       <View style={styles.parentrow}>
         <View style={styles.flowerbullet}>
-            <Ionicon name='ios-flower' size={30} reverse='true' color='#FFD700'/>
+            <Ionicon name='ios-flower' size={30} reverse='true' color='#DAA520'/>
         </View>
         <View style={styles.row}>
           
@@ -54,60 +54,60 @@ export default class EventListView extends PureComponent {
           </View>
           <View style={styles.secondcolumn}>
             <View style={styles.flowercontainer}>
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={20} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={20} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
             </View>
             <Text style={styles.secondcolumntext}>
               {index.eventName}
             </Text>
             
             <Text style={styles.secondcolumntext}>
-              {this.state.days[index.startDateObject.getDay()]} at {index.startDateObject.getHours()}:{index.startDateObject.getMinutes()} PST 
+              {this.state.days[index.startDateObject.getDay()]} at {index.startDateObject.getHours()}:{(index.startDateObject.getMinutes()==0)?"00":index.startDateObject.getMinutes()} PST 
             </Text>
             <Text style={styles.secondcolumntext}>
               {index.venue}
             </Text>
             <View style={styles.flowercontainer}>
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={20} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
-              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#FFD700' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={20} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={15} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={7} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
+              <Ionicon name='md-flower' style={styles.flowericon}  size={5} reverse='true' color='#DAA520' />
             </View>
           </View>
           <View style={styles.thirdcolumn}>
@@ -117,7 +117,7 @@ export default class EventListView extends PureComponent {
           </View>
         </View>
         <View style={styles.flowerbullet}>
-              <Ionicon name='ios-flower' size={30} reverse='true' color='#FFD700' />
+              <Ionicon name='ios-flower' size={30} reverse='true' color='#DAA520' />
         </View>
       </View>
     );
@@ -153,23 +153,23 @@ const styles = StyleSheet.create({
   row: {
     padding: 16,
     borderRadius: 10,
-    backgroundColor: '#567089',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1, 
     flexDirection: 'row',
-    borderColor: '#FFD700',
+    borderColor: '#740001',
     borderWidth: 1,
     margin:10
   },
   text: {
     color: 'white',
     fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   icon: {
     backgroundColor: 'transparent',
-    color: '#FFD700',
+    color: '#740001',
     padding:0
   },
   firstcolumn:{
@@ -179,8 +179,8 @@ const styles = StyleSheet.create({
     width: 20
   },
   firstcolumntext:{
-    fontSize: responsiveFontSize(3),
-    color: '#FFD700',
+    fontSize: responsiveFontSize(2.5),
+    color: '#740001',
     fontWeight: 'bold',
     textAlign: 'center',
   },
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
   },
   secondcolumntext:{
     fontSize: responsiveFontSize(2),
-    color: '#FFD700',
+    color: '#740001',
     fontWeight: 'bold',
     textAlign: 'center'
   },
