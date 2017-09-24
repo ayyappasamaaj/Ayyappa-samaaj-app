@@ -1,18 +1,26 @@
 /* @flow */
 
 import React, { PureComponent } from 'react';
-import { ListView, View, Text, StyleSheet, ActivityIndicator } from 'react-native';
+import { ListView, View, Text, StyleSheet, ActivityIndicator, Image, Dimensions } from 'react-native';
 import Materialicon from 'react-native-vector-icons/MaterialIcons';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import { responsiveFontSize, responsiveHeight, responsiveWidth  } from 'react-native-responsive-dimensions';
+var {width,height} = Dimensions.get('window');
 export default class AboutUsView extends PureComponent {
   
   render() {
     return (
-      <View>
+      <View style={styles.parentrow}>
+        <View style={styles.imagecontainer}>
+          <Image
+            style={{flex:1}}
+            resizeMode = 'contain'
+            source={require('./css/ayyappan.png')}
+          />
+        </View>
           <Text style={styles.aboutparagraph1}>Ayyappa Samaaj is a registered 501 (c)3 non profit organization consisting of the devotees of Lord Ayyappa based out of the San Francisco Bay Area in California, USA. The group has hundreds of members and volunteers who have been actively conducting pujas and bhajans in praise of Lord Ayyappa since the turn of the millennium. Please mail all contributions/donations to:
           </Text>
-          <Text style={styles.aboutparagraph2}>
+          <Text style={styles.aboutheader}>
             Our address: 
           </Text>
           <Text style={styles.aboutparagraph2}>
@@ -29,10 +37,14 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   parentrow:{
-    alignItems: 'center',
-    flex: 1, 
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flex: 1,
+  },
+  imagecontainer:{
+    flex: 1,
+    height:responsiveHeight(20),
+    justifyContent:'center',
+    alignItems:'center',
+    padding:responsiveWidth(3),
   },
   row: {
     padding: 16,
@@ -63,10 +75,10 @@ const styles = StyleSheet.create({
     width: 20
   },
   aboutheader:{
-    fontSize: responsiveFontSize(2.5),
+    fontSize: responsiveFontSize(3),
     color: '#740001',
     fontWeight: 'bold',
-    padding:responsiveWidth(2)
+    padding:responsiveWidth(3)
   },
   secondcolumn:{
     alignItems: 'center',
@@ -75,16 +87,16 @@ const styles = StyleSheet.create({
     width: 60
   },
   aboutparagraph1:{
-    fontSize: responsiveFontSize(1.5),
+    fontSize: responsiveFontSize(2),
     color: '#740001',
     fontWeight: 'bold',
-    padding:responsiveWidth(2)
+    padding:responsiveWidth(3)
   },
   aboutparagraph2:{
     fontSize: responsiveFontSize(2),
     color: '#740001',
     fontWeight: 'bold',
-    padding:responsiveWidth(2)
+    padding:responsiveWidth(3)
   },
   thirdcolumn:{
     alignItems: 'center',
