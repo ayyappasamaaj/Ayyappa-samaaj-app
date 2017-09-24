@@ -3,7 +3,7 @@ import { View, StyleSheet, Text } from 'react-native';
 import { responsiveFontSize, responsiveHeight } from 'react-native-responsive-dimensions';
 export default class Header extends Component {
   state = {
-    headerTitle: 'Sharanam Ayyappa'
+    headerTitle: 'Ayyappa Samaaj'
   };
   render() { 
   	return (

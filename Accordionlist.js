@@ -78,13 +78,11 @@ export default class AccordionList extends PureComponent {
                 <Ionicon name='ios-flower' size={20} reverse='true' color='#DAA520'/>
               </View>
               <View style={styles.subrow1}>
-                <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#DAA520' />
                
                
                   <Text style={styles.subtext}>{section.itemTitle}</Text>
                
                 
-                <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#DAA520' />
               </View>
               <View style={styles.flowerbullet}>
                 <Ionicon name='ios-flower' size={20} reverse='true' color='#DAA520'/>
@@ -156,7 +154,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   subrow1: {
-    borderRadius: 10,
+    borderRadius: 5,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
@@ -166,7 +164,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   subrow2: {
-    borderRadius: 10,
+    borderRadius: 5,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',

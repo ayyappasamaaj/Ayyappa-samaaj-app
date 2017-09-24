@@ -112,7 +112,7 @@ export default class EventListView extends PureComponent {
           </View>
           <View style={styles.thirdcolumn}>
             <Text style={styles.text}>
-              <Materialicon name='add-alert' style={styles.icon} size={32} reverse='true' />
+              
             </Text>
           </View>
         </View>

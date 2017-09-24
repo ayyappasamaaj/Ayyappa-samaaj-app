@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
   },
   row: {
     padding: 8,
-    borderRadius: 10,
+    borderRadius: 5,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',

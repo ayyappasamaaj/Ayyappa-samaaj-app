@@ -51,11 +51,9 @@ export default class AccordionSubList extends PureComponent {
                   <Ionicon name='ios-flower' size={15} reverse='true' color='#DAA520'/>
             </View>
             <View style={styles.sublistrow}>
-              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#DAA520' />
               
                 <Text style={styles.text}>{index.itemTitle}</Text>
               
-              <Ionicon name='md-flower' style={styles.flowericon}  size={10} reverse='true' color='#DAA520' />
             </View>
             <View style={styles.flowerbullet}>
                   <Ionicon name='ios-flower' size={15} reverse='true' color='#DAA520'/>
@@ -97,7 +95,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   sublistrow: {
-    borderRadius: 10,
+    borderRadius: 5,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
@@ -113,6 +111,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     padding: 5,
     fontSize: responsiveFontSize(2),
+    borderRadius: 10,
   },
   icon: {
     backgroundColor: 'transparent',
