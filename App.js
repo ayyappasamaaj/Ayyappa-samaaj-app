@@ -50,11 +50,7 @@ export default class App extends PureComponent<void, *, State> {
       );
     }
   };
-  componentDidMount() {
-    console.log("Component did mount");
-    MFLReactNativePayPal.initializePaypalEnvironment(0,
-      "AWyPKtVl7ac7SOlIscEe-dONGB-oBYav2TwimOgB1FysVGcKneAkj_1O1LV-Vnr0PEeMk5NmweJfIiLm");
-  }
+  
   _first: Object;
   _second: Object;
   _third: Object;
