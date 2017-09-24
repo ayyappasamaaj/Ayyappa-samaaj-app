@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/ramg/Documents/workspace/AyappaSamaajProject/ios/AyappaSamaajProject/main.m \
-  /Users/ramg/Documents/workspace/AyappaSamaajProject/ios/AyappaSamaajProject/AppDelegate.h
+  /Users/ssurya/Personal/AyyappaSamaaj/Repo/Ayyappa-samaaj-app/ios/AyappaSamaajProject/main.m \
+  /Users/ssurya/Personal/AyyappaSamaaj/Repo/Ayyappa-samaaj-app/ios/AyappaSamaajProject/AppDelegate.h

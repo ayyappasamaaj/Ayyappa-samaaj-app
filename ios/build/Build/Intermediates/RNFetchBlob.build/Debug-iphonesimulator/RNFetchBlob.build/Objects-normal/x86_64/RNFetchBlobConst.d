@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/ramg/Documents/workspace/AyappaSamaajProject/node_modules/react-native-fetch-blob/ios/RNFetchBlobConst.m \
-  /Users/ramg/Documents/workspace/AyappaSamaajProject/node_modules/react-native-fetch-blob/ios/RNFetchBlobConst.h
+  /Users/ssurya/Personal/AyyappaSamaaj/Repo/Ayyappa-samaaj-app/node_modules/react-native-fetch-blob/ios/RNFetchBlobConst.m \
+  /Users/ssurya/Personal/AyyappaSamaaj/Repo/Ayyappa-samaaj-app/node_modules/react-native-fetch-blob/ios/RNFetchBlobConst.h

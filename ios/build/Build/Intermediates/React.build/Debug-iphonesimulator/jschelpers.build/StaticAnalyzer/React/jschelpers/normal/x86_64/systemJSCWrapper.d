@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/ramg/Documents/workspace/AyappaSamaajProject/node_modules/react-native/ReactCommon/jschelpers/systemJSCWrapper.cpp \
-  /Users/ramg/Documents/workspace/AyappaSamaajProject/node_modules/react-native/React/../ReactCommon/jschelpers/JSCWrapper.h
+  /Users/ssurya/Personal/AyyappaSamaaj/Repo/Ayyappa-samaaj-app/node_modules/react-native/ReactCommon/jschelpers/systemJSCWrapper.cpp \
+  /Users/ssurya/Personal/AyyappaSamaaj/Repo/Ayyappa-samaaj-app/node_modules/react-native/React/../ReactCommon/jschelpers/JSCWrapper.h
