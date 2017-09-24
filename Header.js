@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
-import { responsiveFontSize, responsiveHeight } from 'react-native-responsive-dimensions';
+import { View, StyleSheet, Text, Image, Dimensions } from 'react-native';
+import { responsiveFontSize, responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
+var {width,height} = Dimensions.get('window');
 export default class Header extends Component {
   state = {
     headerTitle: 'Ayyappa Samaaj'
@@ -8,7 +9,11 @@ export default class Header extends Component {
   render() { 
   	return (
   		<View style={styles.headerViewStyle}>
-  			<Text style={styles.headerTextStyle}>{this.state.headerTitle}</Text>
+  			<Image
+          style={{flex:0.5, height: height, width: width}}
+          resizeMode = 'contain'
+          source={require('./css/aysa_header.png')}
+        />
   		</View>
   	);
   }
@@ -16,15 +21,17 @@ export default class Header extends Component {
 const styles = StyleSheet.create({
   headerViewStyle: {
     alignItems: 'center',
+    backgroundColor: '#8D0001',
+    justifyContent: 'center',
     height:responsiveHeight(10),
-    padding:responsiveHeight(1),
-    backgroundColor: '#740001'
   },
   headerTextStyle: {
-  	fontSize:responsiveFontSize(3),
+  	fontSize:responsiveFontSize(2.5),
   	color: "#FFD700",
     fontWeight: 'bold',
     textAlign: 'center',
-    padding:responsiveHeight(2),
+  },
+  stretch:{
+
   }
 });

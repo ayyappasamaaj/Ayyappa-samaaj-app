@@ -142,7 +142,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection : 'row',
         height: responsiveHeight(5),
-        padding:5
     },
     row1:{
         flexDirection:'row',

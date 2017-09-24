@@ -50,7 +50,6 @@ export default class App extends PureComponent<void, *, State> {
       );
     }
   };
-  
   _first: Object;
   _second: Object;
   _third: Object;
@@ -76,6 +75,7 @@ export default class App extends PureComponent<void, *, State> {
                 this.setState({index:index,routeIndex:'1',homeResponse:homeResponse,isLoading:false});
               })
               .catch((error) => {
+                alert("Please check you internet connection.");
                 console.error(error);
               });
             }
@@ -212,7 +212,7 @@ _renderIcon = ({ route }) => {
         else if(this.state.routeIndex == '3'){
           return (
             <WebView
-              source={{uri: 'file:///Users/ramg/Documents/workspace/AyappaSamaajProject/Donateus.html'}}
+              source={require('./Donateus.html')}
               style={[styles.page, {backgroundColor: '#f8f5ed'}]}
             />
           );
@@ -285,21 +285,14 @@ const styles = StyleSheet.create({
   page: {
     flex: 1
   },
-  donatebutton:{
-    borderRadius: 10,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderColor: '#740001',
-    borderWidth: 1,
-    margin:5
-  },
   tabbar: {
     backgroundColor: '#510000',
     height:responsiveHeight(6),
+    justifyContent: 'center',
   },
   tab: {
-    padding: 0
+    padding: 0,
+    justifyContent: 'center',
   },
   label:{
     color:'white',
@@ -312,7 +305,6 @@ const styles = StyleSheet.create({
     color: 'white',
     alignItems: 'center',
     justifyContent: 'center',
-    padding:responsiveWidth(1),
 
   },
   indicator: {
@@ -320,6 +312,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#DAA520',
     margin: 4,
     borderRadius: 2,
+    justifyContent: 'center',
   },
   badge: {
     marginTop: 4,
