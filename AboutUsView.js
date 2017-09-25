@@ -11,12 +11,60 @@ export default class AboutUsView extends PureComponent {
   render() {
     return (
       <View style={styles.parentrow}>
+        <View style={styles.flowercontainer1}>
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={7} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={10} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={15} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={20} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={15} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={10} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={7} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+        </View>
         <View style={styles.imagecontainer}>
+          
           <Image
-            style={{flex:1}}
+            style={{flex:0.3}}
             resizeMode = 'contain'
             source={require('./css/ayyappan.png')}
           />
+          
+        </View>
+        <View style={styles.flowercontainer1}>
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={7} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={10} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={15} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={20} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={15} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={10} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={7} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
+            <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
         </View>
           <Text style={styles.aboutparagraph1}>Ayyappa Samaaj is a registered 501 (c)3 non profit organization consisting of the devotees of Lord Ayyappa based out of the San Francisco Bay Area in California, USA. The group has hundreds of members and volunteers who have been actively conducting pujas and bhajans in praise of Lord Ayyappa since the turn of the millennium. Please mail all contributions/donations to:
           </Text>
@@ -38,13 +86,15 @@ const styles = StyleSheet.create({
   },
   parentrow:{
     flex: 1,
+    flexDirection :"column"
   },
   imagecontainer:{
     flex: 1,
     height:responsiveHeight(20),
     justifyContent:'center',
     alignItems:'center',
-    padding:responsiveWidth(3),
+    padding:responsiveWidth(1),
+    flexDirection:'row'
   },
   row: {
     padding: 16,
@@ -66,7 +116,6 @@ const styles = StyleSheet.create({
   icon: {
     backgroundColor: 'transparent',
     color: '#740001',
-    padding:0
   },
   firstcolumn:{
     alignItems: 'center',
@@ -104,16 +153,26 @@ const styles = StyleSheet.create({
     flex: 0.2, 
     width: 20
   },
-  flowercontainer:{
+  flowercontainer1:{
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    flex:1
+    padding:responsiveWidth(3),
+  },
+  flowercontainer2:{
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding:responsiveWidth(3)
   },
   flowericon:{
     justifyContent: 'center',
-    padding:1
   },
+  flowericonrow:{
+    justifyContent: 'center',
+    padding:2
+  },
+
   flowerbullet:{
     margin: 0,
     padding:0,
