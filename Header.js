@@ -12,7 +12,7 @@ export default class Header extends Component {
   			<Image
           style={{flex:0.5, height: height, width: width}}
           resizeMode = 'contain'
-          source={require('./css/aysa_header.png')}
+          source={require('./css/aysa_logo.png')}
         />
   		</View>
   	);

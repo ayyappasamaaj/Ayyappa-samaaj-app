@@ -37,9 +37,9 @@ export default class AboutUsView extends PureComponent {
         <View style={styles.imagecontainer}>
           
           <Image
-            style={{flex:0.3}}
+            style={{flex:1}}
             resizeMode = 'contain'
-            source={require('./css/ayyappan.png')}
+            source={require('./css/aysa_banner.jpg')}
           />
           
         </View>
