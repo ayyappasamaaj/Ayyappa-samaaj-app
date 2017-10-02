@@ -110,7 +110,9 @@ export default class HomeListView extends PureComponent {
 
   _renderContent = (section) => {
     return (
+      <View>
        <AccordionList accordionlistrowdata = {section} ontriggerPDF={this.triggerPDF} />
+      </View>
     );
   }
 

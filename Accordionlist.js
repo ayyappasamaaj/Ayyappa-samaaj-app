@@ -72,7 +72,7 @@ export default class AccordionList extends PureComponent {
     }
     else{
       return(
-         <TouchableHighlight onPress={()=>this._onPressRow(section)}>
+         <TouchableHighlight onPress={()=>this._onPressRow(section)} style={styles.contentWrapper}>
             <View style={styles.rowwrapper}>
               <View style={styles.flowerbullet}>
                 <Ionicon name='ios-flower' size={20} reverse='true' color='#DAA520'/>
@@ -96,7 +96,7 @@ export default class AccordionList extends PureComponent {
   _renderContent = (section) => {
     if(this.state.hasSubCategory){
       return(
-        <AccordionSubList accordionsublistrowdata = {section.items} ontriggersublistPDF={this.triggersublistPDF}> </AccordionSubList>
+          <AccordionSubList accordionsublistrowdata = {section.items} ontriggersublistPDF={this.triggersublistPDF}> </AccordionSubList>
       );
     }
   }
@@ -141,12 +141,10 @@ export default class AccordionList extends PureComponent {
   }
 }
 const styles = StyleSheet.create({
-  container: {
-    padding: 8,
-  },
+  // container: {
+  //   padding: 8,
+  // },
   rowwrapper:{
-    alignItems: 'center',
-    flex: 1, 
     flexDirection: 'row',
     justifyContent: 'center',
   },
@@ -235,6 +233,5 @@ const styles = StyleSheet.create({
   flowerbullet:{
     margin: 5,
     padding:0,
-
   }
 });

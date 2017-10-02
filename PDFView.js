@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
         height: 32
     },
     firstcolumntext:{
-        fontSize : responsiveHeight(3),
+        fontSize : responsiveHeight(2),
         color: 'white',
         fontWeight: 'bold',
         textAlign: 'center'

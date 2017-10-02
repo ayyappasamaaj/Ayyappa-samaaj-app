@@ -20,6 +20,9 @@
                 width: 90%;
             }
         }
+        @font-face {
+            font-family: sans-serif;
+        }
         .fieldsetstyle{
             border:none;
         }
@@ -28,18 +31,21 @@
             font-weight: bold;
             text-align: center;
             padding: 5px;
+            font-family: sans-serif;
         }
         .labelstyle{
             color: #740001;
             font-weight: bold;
             text-align: center;
             padding: 5px;
+            font-family: sans-serif;
         }
         .inputstyle{
             text-align: left;
             padding: 5px;
             border-radius: 7px;
             border-color: #740001;
+            font-family: sans-serif;
         }
         .buttonstyle{
             border-radius: 15px;
@@ -49,6 +55,8 @@
             text-align: center;
             color: #740001;
             padding: 5px;
+            font-family: sans-serif;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -63,6 +71,7 @@
             type="number" 
             name="amount" 
             id="amount" 
+            pattern="\d*"
             placeholder="$25" 
             required class="inputstyle" />
             <br>

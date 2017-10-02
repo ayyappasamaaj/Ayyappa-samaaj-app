@@ -37,9 +37,9 @@ export default class AboutUsView extends PureComponent {
         <View style={styles.imagecontainer}>
           
           <Image
-            style={{flex:1}}
+            style={{flex:0.3}}
             resizeMode = 'contain'
-            source={require('./css/aysa_banner.jpg')}
+            source={require('./css/ayyappan.png')}
           />
           
         </View>
@@ -89,12 +89,12 @@ const styles = StyleSheet.create({
     flexDirection :"column"
   },
   imagecontainer:{
-    flex: 1,
     height:responsiveHeight(20),
     justifyContent:'center',
-    alignItems:'center',
-    padding:responsiveWidth(1),
-    flexDirection:'row'
+    padding:responsiveWidth(2),
+    flexDirection:'row',
+    alignItems: 'center',
+    flex:1,
   },
   row: {
     padding: 16,

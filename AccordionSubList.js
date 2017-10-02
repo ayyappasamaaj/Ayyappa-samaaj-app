@@ -45,21 +45,19 @@ export default class AccordionSubList extends PureComponent {
   _renderRow = index => {
     //this.setState({index:index});
       return(
-        <TouchableHighlight onPress={()=>this._onPressRow(index)}>
-          <View style={styles.parentrow}>
-            <View style={styles.flowerbullet}>
-                  <Ionicon name='ios-flower' size={15} reverse='true' color='#DAA520'/>
+          <TouchableHighlight onPress={()=>this._onPressRow(index)}>
+            <View style={styles.parentrow}>
+              <View style={styles.flowerbullet}>
+                    <Ionicon name='ios-flower' size={15} reverse='true' color='#DAA520'/>
+              </View>
+              <View style={styles.sublistrow}>
+                  <Text style={styles.text}>{index.itemTitle}</Text>
+              </View>
+              <View style={styles.flowerbullet}>
+                    <Ionicon name='ios-flower' size={15} reverse='true' color='#DAA520'/>
+              </View>
             </View>
-            <View style={styles.sublistrow}>
-              
-                <Text style={styles.text}>{index.itemTitle}</Text>
-              
-            </View>
-            <View style={styles.flowerbullet}>
-                  <Ionicon name='ios-flower' size={15} reverse='true' color='#DAA520'/>
-            </View>
-        </View>
-        </TouchableHighlight>
+          </TouchableHighlight>
       );
   	
   };
@@ -72,7 +70,7 @@ export default class AccordionSubList extends PureComponent {
     return (
       <ListView
         {...this.props}
-        removeClippedSubviews={false}
+        removeClippedSubviews={true}
         contentContainerStyle={styles.container}
         dataSource={this.state.dataSource}
         renderRow={this._renderRow}
@@ -86,8 +84,6 @@ const styles = StyleSheet.create({
     padding:8
   },
   parentrow:{
-    alignItems: 'center',
-    flex: 1, 
     flexDirection: 'row',
     justifyContent: 'center',
   },
