@@ -1308,7 +1308,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.aysa.Ayyappa-Samaaj";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayyappasamaaj.tattvamasi;
 				PRODUCT_NAME = AyappaSamaajProject;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1339,7 +1339,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.aysa.Ayyappa-Samaaj";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayyappasamaaj.tattvamasi;
 				PRODUCT_NAME = AyappaSamaajProject;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
