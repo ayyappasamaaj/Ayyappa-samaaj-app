@@ -37,9 +37,9 @@ export default class AboutUsView extends PureComponent {
         <View style={styles.imagecontainer}>
           
           <Image
-            style={{flex:0.3}}
+            style={{flex:1}}
             resizeMode = 'contain'
-            source={require('./css/ayyappan.png')}
+            source={require('./css/aysa_banner.png')}
           />
           
         </View>
@@ -66,15 +66,42 @@ export default class AboutUsView extends PureComponent {
             <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
             <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
         </View>
-          <Text style={styles.aboutparagraph1}>Ayyappa Samaaj is a registered 501 (c)3 non profit organization consisting of the devotees of Lord Ayyappa based out of the San Francisco Bay Area in California, USA. The group has hundreds of members and volunteers who have been actively conducting pujas and bhajans in praise of Lord Ayyappa since the turn of the millennium. Please mail all contributions/donations to:
-          </Text>
-          <Text style={styles.aboutheader}>
-            Our address: 
-          </Text>
-          <Text style={styles.aboutparagraph2}>
-            Ayyappa Samaaj, P.O. Box 2723, San Ramon, CA 94583
-            Tax ID: # (EIN) 45-1061428
-          </Text>
+        <Text style={styles.aboutheader}>Tatwamasi</Text>
+        <Text style={styles.aboutparagraph1}>Ayyappa Samaaj is a registered 501 (c)3 non profit organization consisting of the devotees of Lord Ayyappa based out of the San Francisco Bay Area in California, USA. The group has hundreds of members and volunteers who have been actively conducting pujas and bhajans in praise of Lord Ayyappa since the turn of the millennium. Please mail all contributions/donations to:
+        </Text>
+        <Text style={styles.aboutheader}>
+          Contact Us: 
+        </Text>
+        <View style={styles.flowercontainer2}>
+          <View style={styles.contactcontainer}>
+            <Materialicon name='phone' style={styles.contacticonrow}  size={35} reverse='true' color='#DAA520' />
+            <Text style={styles.contactrowtext}>(484) 727-8424 </Text>
+          </View>
+          <View style={styles.contactcontainer}>
+          <Materialicon name='email' style={styles.contacticonrow}  size={35} reverse='true' color='#DAA520' />
+            <Text style={styles.contactrowtext}>ayyappasamaaj@gmail.com </Text>
+          </View>
+          <View style={styles.contactcontainer}>
+            <Ionicon name='logo-chrome' style={styles.contacticonrow}  size={35} reverse='true' color='#DAA520' />
+            <Text style={styles.contactrowtext}>ayyappasamaaj.org </Text>
+          </View>
+          <View style={styles.contactcontainer}>
+            <Ionicon name='logo-facebook' style={styles.contacticonrow}  size={35} reverse='true' color='#DAA520' />
+            <Text style={styles.contactrowtext}>facebook.com/ayyappa.samaaj.us </Text>
+          </View>
+          <View style={styles.contactcontainer}>
+            <Ionicon name='ios-pin' style={styles.contacticonrow}  size={35} reverse='true' color='#DAA520' />
+            <View style={styles.flowercontainer2}>
+              <Text style={styles.contactrowtext}>Ayyappa Samaaj, P.O. Box 2723, </Text>
+              <Text style={styles.contactrowtext}>San Ramon, CA 94583</Text>
+              <Text style={styles.contactrowtext}>Tax ID: # (EIN) 45-1061428 </Text>
+            </View>
+          </View>
+        </View>
+        
+        <Text style={styles.aboutparagraph2}>
+          
+        </Text>
       </View>
     );
   }
@@ -161,9 +188,12 @@ const styles = StyleSheet.create({
   },
   flowercontainer2:{
     flexDirection: 'column',
-    justifyContent: 'center',
+    padding:responsiveWidth(2)
+  },
+  contactcontainer:{
+    flexDirection: 'row',
+    padding:responsiveWidth(2),
     alignItems: 'center',
-    padding:responsiveWidth(3)
   },
   flowericon:{
     justifyContent: 'center',
@@ -172,7 +202,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding:2
   },
-
+  contacticonrow:{
+    justifyContent: 'center',
+    padding:10,
+  },
+  contactrowtext:{
+    fontSize: responsiveFontSize(2),
+    color: '#740001',
+    fontWeight: 'bold',
+  },
   flowerbullet:{
     margin: 0,
     padding:0,
