@@ -1,3 +1,6 @@
 /node_modules
 npm-debug.log
 .DS_Store
+android/.gradle/*
+ios/Ayyappa Samaaj.xcodeproj/project.xcworkspace/xcuserdata/ssurya.xcuserdatad/UserInterfaceState.xcuserstate
+ios/Ayyappa Samaaj.xcodeproj/xcshareddata/xcschemes/AyappaSamaajProject.xcscheme

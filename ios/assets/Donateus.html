@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        @media (min-width: 800px) {
+            legend, label, button {
+                font-size: 50px;
+                margin:50px;
+            }
+            input{
+                font-size:50px;
+                margin:50px;
+            }
+            div{
+                width:100%;
+                height:100%;
+            }
+            button{
+                width: 90%;
+            }
+        }
+        @font-face {
+            font-family: sans-serif;
+        }
+        .fieldsetstyle{
+            border:none;
+        }
+        .legendstyle{
+            color: #740001;
+            font-weight: bold;
+            text-align: center;
+            padding: 5px;
+            font-family: sans-serif;
+        }
+        .labelstyle{
+            color: #740001;
+            font-weight: bold;
+            text-align: center;
+            padding: 5px;
+            font-family: sans-serif;
+        }
+        .inputstyle{
+            text-align: left;
+            padding: 5px;
+            border-radius: 7px;
+            border-color: #740001;
+            font-family: sans-serif;
+        }
+        .buttonstyle{
+            border-radius: 15px;
+            background-color: #fff;
+            border-color: #740001;
+            border-width: 2px;
+            text-align: center;
+            color: #740001;
+            padding: 5px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="">
+          <fieldset class="fieldsetstyle">
+            <legend class="legendstyle">Support Ayyappa Samaaj</legend>
+            <label 
+            for="amount" class="labelstyle">Amount:</label><br>
+            <input 
+            type="number" 
+            name="amount" 
+            id="amount" 
+            pattern="\d*"
+            placeholder="$25" 
+            required class="inputstyle" />
+            <br>
+            <button 
+            type="submit" 
+            value="Submit" 
+            class="buttonstyle">Donate</button>
+          </fieldset>
+        </form>
+    </div>
+</body>
+</html>
