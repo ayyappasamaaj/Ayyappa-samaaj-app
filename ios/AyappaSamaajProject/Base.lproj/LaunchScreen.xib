@@ -16,7 +16,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="aysa_header.png" id="fqA-wJ-Czb">
-                    <rect key="frame" x="10" y="257" width="300" height="54"/>
+                    <rect key="frame" x="10" y="366" width="300" height="54"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ayyappan-img2.png" id="HnV-vv-iUM">
+                    <rect key="frame" x="58" y="148" width="205" height="210"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
@@ -28,6 +32,7 @@
     </objects>
     <resources>
         <image name="aysa_header.png" width="1776" height="317"/>
+        <image name="ayyappan-img2.png" width="409" height="420"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
