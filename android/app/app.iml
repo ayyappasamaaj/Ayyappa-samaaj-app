@@ -140,5 +140,9 @@
     <orderEntry type="module" module-name="react-native-pdf" exported="" />
     <orderEntry type="module" module-name="react-native-vector-icons" exported="" />
     <orderEntry type="module" module-name="react-native-fetch-blob" exported="" />
+    <orderEntry type="library" exported="" name="android-pdf-viewer-2.7.0" level="project" />
+    <orderEntry type="library" exported="" name="pdfium-android-1.7.0" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-23.0.1" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-23.0.1" level="project" />
   </component>
 </module>
