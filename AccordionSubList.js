@@ -157,6 +157,8 @@ const styles = StyleSheet.create({
   flowerbullet:{
     margin: 5,
     padding:0,
+    alignItems: 'center',
+    justifyContent: 'center',
 
   }
 });

@@ -4,9 +4,8 @@
     <style>
 
         @media (min-width: 800px) {
-            legend, label, button {
-                font-size: 50px;
-                margin:50px;
+            div, button  {
+                font-size: 40px;
             }
             input{
                 font-size:50px;
@@ -19,9 +18,15 @@
             button{
                 width: 90%;
             }
+            legend, label{
+                font-size: 60px
+            }
         }
         @font-face {
             font-family: sans-serif;
+        }
+        body{
+            background-color: #f8f5ed
         }
         .fieldsetstyle{
             border:none;
@@ -30,7 +35,14 @@
             color: #740001;
             font-weight: bold;
             text-align: center;
-            padding: 5px;
+            padding: 30px;
+            font-family: sans-serif;
+        }
+        .paragraphstyle{
+            color: #740001;
+            font-weight: bold;
+            text-align: left;
+            padding: 30px;
             font-family: sans-serif;
         }
         .labelstyle{
@@ -48,39 +60,41 @@
             font-family: sans-serif;
         }
         .buttonstyle{
-            border-radius: 15px;
+            border-radius: 100px;
             background-color: #fff;
-            border-color: #740001;
+            border-color: #DAA520;
             border-width: 2px;
             text-align: center;
             color: #740001;
-            padding: 5px;
+            background-color: #DAA520;
+            padding: 20px;
             font-family: sans-serif;
             font-weight: bold;
+
+        }
+        .formstyle{
+            text-align: center;
+            padding:30px;
         }
     </style>
 </head>
 <body>
-    <div>
-        <form action="">
-          <fieldset class="fieldsetstyle">
-            <legend class="legendstyle">Support Ayyappa Samaaj</legend>
-            <label 
-            for="amount" class="labelstyle">Amount:</label><br>
-            <input 
-            type="number" 
-            name="amount" 
-            id="amount" 
-            pattern="\d*"
-            placeholder="$25" 
-            required class="inputstyle" />
-            <br>
-            <button 
-            type="submit" 
-            value="Submit" 
-            class="buttonstyle">Donate</button>
-          </fieldset>
+    <fieldset class="fieldsetstyle">
+        <legend class="legendstyle">Support Ayyappa Samaaj</legend>
+        <div class="paragraphstyle">
+            Ayyappa Samaaj is a volunteer driven IRS recognized 501c(3) organization (Tax ID: # (EIN) 45-1061428)  that conducts events using funds that are donated to the organization by the general public. All your donations to Ayyappa Samaaj are tax deductible to the extent allowed by the IRS for 501(c)3 organizations.
+        </div>
+        <div class="paragraphstyle">
+            Ayyappa Samaaj, <br>
+            P.O. Box 2723, San Ramon, <br>
+            CA 94583 
+        </div>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="formstyle">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="4M73DVTGB3BNY">
+            <button class="buttonstyle" name="submit" alt="PayPal - The safer, easier way to pay online!">Donate</button>
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
         </form>
-    </div>
+    </fieldset>
 </body>
 </html>

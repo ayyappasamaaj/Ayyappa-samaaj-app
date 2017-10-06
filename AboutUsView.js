@@ -66,9 +66,35 @@ export default class AboutUsView extends PureComponent {
             <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
             <Ionicon name='md-flower' style={styles.flowericonrow}  size={5} reverse='true' color='#DAA520' />
         </View>
-        <Text style={styles.aboutheader}>Tatwamasi</Text>
-        <Text style={styles.aboutparagraph1}>Ayyappa Samaaj is a registered 501 (c)3 non profit organization consisting of the devotees of Lord Ayyappa based out of the San Francisco Bay Area in California, USA. The group has hundreds of members and volunteers who have been actively conducting pujas and bhajans in praise of Lord Ayyappa since the turn of the millennium. Please mail all contributions/donations to:
-        </Text>
+        <Text style={styles.aboutheader}>OUR MISSION</Text>
+        <View style={styles.aboutparagraph1}>
+          <Text style={styles.aboutparagraph2}>Ayyappa Samaaj is a registered 501(c)(3) Non-Profit (Tax ID: # (EIN) 45-1061428) that was formed with the following purpose:</Text>
+          <View style={styles.bulletcontainer}>
+            <Ionicon name='md-flower' style={styles.flowericonrowbullet}  size={20} reverse='true' color='#DAA520' />
+            <Text style={styles.aboutparagraph2}>To propagate and perpetuate the religious aspects of the worship of Lord Ayyappa,</Text> 
+          </View>
+          <View style={styles.bulletcontainer}>
+            <Ionicon name='md-flower' style={styles.flowericonrowbullet}  size={20} reverse='true' color='#DAA520' />
+            <Text style={styles.aboutparagraph2}>To promote the awareness of Lord Ayyappa and deities associated with Lord Ayyappa to the community,</Text> 
+         
+          </View>
+          <View style={styles.bulletcontainer}>
+            <Ionicon name='md-flower' style={styles.flowericonrowbullet}  size={20} reverse='true' color='#DAA520' />
+            <Text style={styles.aboutparagraph2}>To publish electronic and print publications to promote the awareness of Lord Ayyappa and associated deities to the community,</Text> 
+          </View>
+          <View style={styles.bulletcontainer}>
+            <Ionicon name='md-flower' style={styles.flowericonrowbullet}  size={20} reverse='true' color='#DAA520' />
+            <Text style={styles.aboutparagraph2}>To organize spiritual events as well as religious events that are associated with the worship of Lord Ayyappa and associated deities,</Text> 
+          </View>
+          <View style={styles.bulletcontainer}>
+            <Ionicon name='md-flower' style={styles.flowericonrowbullet}  size={20} reverse='true' color='#DAA520' />
+            <Text style={styles.aboutparagraph2}>To promote the construction of a permanent shrine for Lord Ayyappa and deities associated with Lord Ayyappa in one of the temples in the San Francisco Bay Area or adjoining locations, and</Text> 
+          </View>
+          <View style={styles.bulletcontainer}>
+            <Ionicon name='md-flower' style={styles.flowericonrowbullet}  size={20} reverse='true' color='#DAA520' />
+            <Text style={styles.aboutparagraph2}>Provide assistance to other communities (local and worldwide) in the area of human, religious and community assistance services.</Text>
+          </View>
+        </View>
         <Text style={styles.aboutheader}>
           Contact Us: 
         </Text>
@@ -163,16 +189,15 @@ const styles = StyleSheet.create({
     width: 60
   },
   aboutparagraph1:{
-    fontSize: responsiveFontSize(2),
-    color: '#740001',
-    fontWeight: 'bold',
+    flexDirection:'column',
     padding:responsiveWidth(3)
   },
   aboutparagraph2:{
     fontSize: responsiveFontSize(2),
     color: '#740001',
     fontWeight: 'bold',
-    padding:responsiveWidth(3)
+    padding:responsiveWidth(2),
+    width:responsiveWidth(85)
   },
   thirdcolumn:{
     alignItems: 'center',
@@ -190,6 +215,10 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     padding:responsiveWidth(2)
   },
+  bulletcontainer:{
+    flexDirection: 'row',
+    padding:responsiveWidth(2),
+  },
   contactcontainer:{
     flexDirection: 'row',
     padding:responsiveWidth(2),
@@ -201,6 +230,10 @@ const styles = StyleSheet.create({
   flowericonrow:{
     justifyContent: 'center',
     padding:2
+  },
+  flowericonrowbullet:{
+    justifyContent: 'center',
+    padding:responsiveWidth(2)
   },
   contacticonrow:{
     justifyContent: 'center',
