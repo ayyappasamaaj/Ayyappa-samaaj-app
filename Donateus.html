@@ -1,44 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, height=device-height initial-scale=1">
     <style>
-
-        @media (min-width: 800px) {
-            div, button  {
-                font-size: 40px;
+        @media only screen 
+          and (min-device-width: 320px) 
+          and (-webkit-min-device-pixel-ratio: 2)
+          and (orientation: portrait) {
+            .paragraphstyle {
+                font-size: 15px;
             }
-            input{
-                font-size:50px;
-                margin:50px;
+            img{
+                width:100%;
+                text-align: center;
+            }
+            img.icon{
+                width:20%;
+                vertical-align: middle;
+                vertical-align: -webkit-baseline-middle;
             }
             button{
                 width: 90%;
+                font-size: 20px;
             }
             legend, label{
-                font-size: 60px
+                font-size: 20px
+            }
+            .paypaltext{
+                font-size: 10px;
+            }
+            .formstyle{
+                padding:2px;
+            }
+        }
+        @media only screen 
+          and (min-device-width: 768px) 
+          and (max-device-width: 1024px) 
+          and (-webkit-min-device-pixel-ratio: 1) {
+            .paragraphstyle {
+                font-size: 20px;
+            }
+            img{
+                width:100%;
+                text-align: center;
+            }
+            img.icon{
+                width:20%;
+                vertical-align: middle;
+                vertical-align: -webkit-baseline-middle;
+            }
+            button{
+                width: 90%;
+                font-size: 30px;
+            }
+            legend, label{
+                font-size: 40px
+            }
+            .paypaltext{
+                font-size: 20px;
+            }
+            .formstyle{
+                padding:10px;
             }
         }
         @font-face {
             font-family: sans-serif;
         }
         body{
-            background-color: #f8f5ed
+            background-color: #f8f5ed;
+            text-align:center;
         }
         .fieldsetstyle{
             border:none;
+            text-align:center;
         }
         .legendstyle{
             color: #740001;
             font-weight: bold;
             text-align: center;
-            padding: 30px;
+            padding: 10px;
             font-family: sans-serif;
         }
         .paragraphstyle{
             color: #740001;
             font-weight: bold;
-            text-align: left;
-            padding: 30px;
+            text-align: justify;
+            padding: 10px;
             font-family: sans-serif;
         }
         .labelstyle{
@@ -63,20 +110,34 @@
             text-align: center;
             color: #740001;
             background-color: #DAA520;
-            padding: 20px;
+            padding: 10px;
             font-family: sans-serif;
             font-weight: bold;
 
         }
         .formstyle{
             text-align: center;
-            padding:30px;
+        }
+        .paypaldiv{
+            color: #740001;
+            font-weight: bold;
+            font-family: sans-serif;
+            text-align: center;
+            vertical-align: bottom;
+        }
+        .paypaltext{
+            display: inline-block;
+            vertical-align: bottom;
+        }
+        .paypalaltimage{
+            width:auto;
         }
     </style>
 </head>
 <body>
     <fieldset class="fieldsetstyle">
         <legend class="legendstyle">Support Ayyappa Samaaj</legend>
+        <img src="css/donate_banner.jpg" />
         <div class="paragraphstyle">
             Ayyappa Samaaj is a volunteer driven IRS recognized 501c(3) organization (Tax ID: # (EIN) 45-1061428)  that conducts events using funds that are donated to the organization by the general public. All your donations to Ayyappa Samaaj are tax deductible to the extent allowed by the IRS for 501(c)3 organizations.
         </div>
@@ -88,9 +149,13 @@
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="formstyle">
             <input type="hidden" name="cmd" value="_s-xclick">
             <input type="hidden" name="hosted_button_id" value="4M73DVTGB3BNY">
-            <button class="buttonstyle" name="submit" alt="PayPal - The safer, easier way to pay online!">Donate</button>
-            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            <button class="buttonstyle" name="submit" alt="PayPal - The safer, easier way to pay online!">Donate Us</button>
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" class="paypalaltimage">
         </form>
+        <div class="paypaldiv"> 
+            <div class="paypaltext">Powered by</div>
+            <img class="icon" src="css/paypal.png"/>    
+        </div>
     </fieldset>
 </body>
 </html>

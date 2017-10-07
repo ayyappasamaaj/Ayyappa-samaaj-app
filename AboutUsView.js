@@ -68,7 +68,9 @@ export default class AboutUsView extends PureComponent {
         </View>
         <Text style={styles.aboutheader}>OUR MISSION</Text>
         <View style={styles.aboutparagraph1}>
-          <Text style={styles.aboutparagraph2}>Ayyappa Samaaj is a registered 501(c)(3) Non-Profit (Tax ID: # (EIN) 45-1061428) that was formed with the following purpose:</Text>
+          <View style={styles.bulletcontainer}>
+            <Text style={styles.aboutparagraph}>Ayyappa Samaaj is a registered 501(c)(3) Non-Profit (Tax ID: # (EIN) 45-1061428) that was formed with the following purpose:</Text>
+          </View>
           <View style={styles.bulletcontainer}>
             <Ionicon name='md-flower' style={styles.flowericonrowbullet}  size={20} reverse='true' color='#DAA520' />
             <Text style={styles.aboutparagraph2}>To propagate and perpetuate the religious aspects of the worship of Lord Ayyappa,</Text> 
@@ -188,6 +190,13 @@ const styles = StyleSheet.create({
     flex: 0.8, 
     width: 60
   },
+  aboutparagraph:{
+    fontSize: responsiveFontSize(2),
+    color: '#740001',
+    fontWeight: 'bold',
+    padding:responsiveWidth(4),
+    textAlign:'justify'
+  },
   aboutparagraph1:{
     flexDirection:'column',
     padding:responsiveWidth(3)
@@ -196,8 +205,17 @@ const styles = StyleSheet.create({
     fontSize: responsiveFontSize(2),
     color: '#740001',
     fontWeight: 'bold',
-    padding:responsiveWidth(2),
-    width:responsiveWidth(85)
+    padding:responsiveWidth(4),
+    width:responsiveWidth(80),
+    textAlign:'justify'
+  },
+  aboutparagraph3:{
+    fontSize: responsiveFontSize(2),
+    color: '#740001',
+    fontWeight: 'bold',
+    padding:responsiveWidth(4),
+    width:responsiveWidth(80),
+    textAlign:'justify'
   },
   thirdcolumn:{
     alignItems: 'center',
@@ -213,11 +231,11 @@ const styles = StyleSheet.create({
   },
   flowercontainer2:{
     flexDirection: 'column',
-    padding:responsiveWidth(2)
+    padding:responsiveWidth(2),
   },
   bulletcontainer:{
     flexDirection: 'row',
-    padding:responsiveWidth(2),
+    padding:responsiveWidth(3)
   },
   contactcontainer:{
     flexDirection: 'row',
