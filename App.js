@@ -10,6 +10,8 @@ import AboutUsView from './AboutUsView';
 import { responsiveFontSize, responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 let MFLReactNativePayPal = NativeModules.MFLReactNativePayPal;
+require('./css/donate_banner.jpg');
+require('./css/paypal.png');
 
 export default class App extends PureComponent<void, *, State> {
   state: State = {
