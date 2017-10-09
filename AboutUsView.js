@@ -119,10 +119,10 @@ export default class AboutUsView extends PureComponent {
           </View>
           <View style={styles.contactcontainer}>
             <Ionicon name='ios-pin' style={styles.contacticonrow}  size={35} reverse='true' color='#DAA520' />
-            <View style={styles.flowercontainer2}>
-              <Text style={styles.contactrowtext}>Ayyappa Samaaj, P.O. Box 2723, </Text>
-              <Text style={styles.contactrowtext}>San Ramon, CA 94583</Text>
-              <Text style={styles.contactrowtext}>Tax ID: # (EIN) 45-1061428 </Text>
+            <View style={styles.contactrowtextcontainer}>
+              <Text style={styles.ccontactrowtextcontainertext}>Ayyappa Samaaj, P.O. Box 2723, </Text>
+              <Text style={styles.ccontactrowtextcontainertext}>San Ramon, CA 94583</Text>
+              <Text style={styles.ccontactrowtextcontainertext}>Tax ID: # (EIN) 45-1061428 </Text>
             </View>
           </View>
         </View>
@@ -235,7 +235,8 @@ const styles = StyleSheet.create({
   },
   bulletcontainer:{
     flexDirection: 'row',
-    padding:responsiveWidth(3)
+    padding:responsiveWidth(3),
+    alignItems: 'center',
   },
   contactcontainer:{
     flexDirection: 'row',
@@ -258,6 +259,16 @@ const styles = StyleSheet.create({
     padding:10,
   },
   contactrowtext:{
+    fontSize: responsiveFontSize(2),
+    color: '#740001',
+    fontWeight: 'bold',
+    padding:10,
+  },
+  contactrowtextcontainer:{
+    flexDirection: 'column',
+    padding:10,
+  },
+  ccontactrowtextcontainertext:{
     fontSize: responsiveFontSize(2),
     color: '#740001',
     fontWeight: 'bold',
