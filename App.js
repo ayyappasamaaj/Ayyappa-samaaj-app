@@ -215,7 +215,7 @@ _renderIcon = ({ route }) => {
           return (
             <WebView
               source={require('./Donateus.html')}//for ios
-              /*source={{uri:'file:///android_asset/donateus.html'}*///for android
+              /*source={{uri:'file:///android_asset/Donateus.html'}}*///for android
               style={[styles.page, {backgroundColor: '#f8f5ed'}]}
               scalesPageToFit={false}              
               bounces={false}
