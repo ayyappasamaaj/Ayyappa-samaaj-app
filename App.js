@@ -214,8 +214,14 @@ _renderIcon = ({ route }) => {
         else if(this.state.routeIndex == '3'){
           return (
             <WebView
-              source={{uri:'file:///android_asset/donateus.html'}}
+              source={require('./Donateus.html')}//for ios
+              /*source={{uri:'file:///android_asset/donateus.html'}*///for android
               style={[styles.page, {backgroundColor: '#f8f5ed'}]}
+              scalesPageToFit={false}              
+              bounces={false}
+              onLoadStart={this.onWebViewLoadStart}
+              onLoadEnd={this.onWebViewLoadEnd}
+              startInLoadingState
             />
           );
 

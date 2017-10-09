@@ -2,13 +2,15 @@ import React, { PureComponent } from 'react';
 import { ListView, View, Text, StyleSheet, ActivityIndicator, TouchableHighlight, TextInput } from 'react-native';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import { responsiveFontSize } from 'react-native-responsive-dimensions';
+import Accordion from 'react-native-collapsible/Accordion';
 export default class AccordionSubList extends PureComponent {
   _isMounted = false;
   state = {
     index:{},
     dataSource: new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2,
-    })
+    }),
+    sections :[] 
   };
   componentWillMount() {
     this._genRows();
@@ -36,12 +38,39 @@ export default class AccordionSubList extends PureComponent {
     //     }
     //   }
     // }
-    if(accordionsublistrowdata.length && this.state.dataSource){
+    //for listview purposes - removed while last minute fix for nested scroll.
+    // if(accordionsublistrowdata.length && this.state.dataSource){
+    //   this.setState({
+    //     dataSource: this.state.dataSource.cloneWithRows(accordionsublistrowdata),
+    //   });
+    // }
+    if(this.state.sections.length == 0){
       this.setState({
-        dataSource: this.state.dataSource.cloneWithRows(accordionsublistrowdata),
+        //dataSource: this.state.dataSource.cloneWithRows(accordionsublistrowdata), list view purposes - commented for last minute fix for nested scrolls
+        sections : accordionsublistrowdata
       });
     }
   };
+  _renderHeader = (section) => {
+    return(
+          <TouchableHighlight onPress={()=>this._onPressRow(section)}>
+            <View style={styles.parentrow}>
+              <View style={styles.flowerbullet}>
+                    <Ionicon name='ios-flower' size={15} reverse='true' color='#DAA520'/>
+              </View>
+              <View style={styles.sublistrow}>
+                  <Text style={styles.text}>{section.itemTitle}</Text>
+              </View>
+              <View style={styles.flowerbullet}>
+                    <Ionicon name='ios-flower' size={15} reverse='true' color='#DAA520'/>
+              </View>
+            </View>
+          </TouchableHighlight>
+    );
+  };
+  _renderContent=()=>{
+    return null;
+  }
   _renderRow = index => {
     //this.setState({index:index});
       return(
@@ -67,15 +96,22 @@ export default class AccordionSubList extends PureComponent {
     this.props.ontriggersublistPDF(index);
   }
   render() {
+    // return (
+    //   <ListView
+    //     {...this.props}
+    //     removeClippedSubviews={true}
+    //     contentContainerStyle={styles.container}
+    //     dataSource={this.state.dataSource}
+    //     renderRow={this._renderRow}
+    //     ref={el => (this._root = el)}
+    //   />
+    // );
     return (
-      <ListView
-        {...this.props}
-        removeClippedSubviews={true}
-        contentContainerStyle={styles.container}
-        dataSource={this.state.dataSource}
-        renderRow={this._renderRow}
-        ref={el => (this._root = el)}
-      />
+        <Accordion 
+          sections={this.state.sections}
+          renderHeader={this._renderHeader}
+          renderContent={this._renderContent}
+        />
     );
   }
 }
