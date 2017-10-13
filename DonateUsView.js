@@ -76,7 +76,7 @@ export default class AboutUsView extends PureComponent {
         </View>
         <View style={styles.buttonparentcontainer}>
           <TouchableHighlight
-            onPress={ ()=>{ Linking.openURL('https://facebook.com')}}
+            onPress={ ()=>{ Linking.openURL('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4M73DVTGB3BNY ')}}
             accessibilityLabel="Learn more about this purple button">
             <View style={styles.buttoncontainer}>
               <Text
