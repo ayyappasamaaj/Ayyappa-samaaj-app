@@ -6,13 +6,11 @@ import HomeListView from './HomeListView';
 import Header from './Header';
 import PDFView from './PDFView';
 import AboutUsView from './AboutUsView';
+import DonateUsView from './DonateUsView';
 //import { Icon } from 'react-native-elements';
 import { responsiveFontSize, responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 let MFLReactNativePayPal = NativeModules.MFLReactNativePayPal;
-require('./css/donate_banner.jpg');
-require('./css/paypal.png');
-
 export default class App extends PureComponent<void, *, State> {
   state: State = {
     index: 0,
@@ -212,19 +210,26 @@ _renderIcon = ({ route }) => {
           );
         }
         else if(this.state.routeIndex == '3'){
-          return (
-            <WebView
-              source={require('./Donateus.html')}//for ios
-              /*source={{uri:'file:///android_asset/Donateus.html'}}*///for android
-              style={[styles.page, {backgroundColor: '#f8f5ed'}]}
-              scalesPageToFit={false}              
-              bounces={false}
-              onLoadStart={this.onWebViewLoadStart}
-              onLoadEnd={this.onWebViewLoadEnd}
-              startInLoadingState
-            />
+          // return (
+          //   <WebView
+          //     source={require('./Donateus.html')}//for ios
+          //     /*source={{uri:'file:///android_asset/Donateus.html'}}*///for android
+          //     style={[styles.page, {backgroundColor: '#f8f5ed'}]}
+          //     scalesPageToFit={false}              
+          //     bounces={false}
+          //     onLoadStart={this.onWebViewLoadStart}
+          //     onLoadEnd={this.onWebViewLoadEnd}
+          //     startInLoadingState
+          //   />
+          // );
+          return(
+            <ScrollView
+              style={[styles.page, { backgroundColor: '#f8f5ed' }]}
+            >
+              <DonateUsView
+              />
+            </ScrollView>
           );
-
         }
         break;
       case '4':
@@ -248,6 +253,8 @@ _renderIcon = ({ route }) => {
         break;
     }
   };
+  onWebViewRender=()=>{ alert("hi")};
+  // onWebViewLoadEnd=()=>{ this.setState({isLoading:false}); }
   _onPressButton() {
     MFLReactNativePayPal.preparePaymentOfAmount("1.00", "USD", "Ayy");
     MFLReactNativePayPal.prepareConfigurationForMerchant("Bacon Truck", true, "bacon@bacon.com");
@@ -291,7 +298,8 @@ const styles = StyleSheet.create({
     flex: 1
   },
   page: {
-    flex: 1
+    flex: 1,
+    padding:8
   },
   tabbar: {
     backgroundColor: '#510000',
